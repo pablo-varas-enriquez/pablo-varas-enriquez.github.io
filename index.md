@@ -12,4 +12,4 @@ Previously, I obtained my PhD at the Max Planck Insititue for Evolutionary Anthr
 
 My research aims to answer the question on why people have babies? I focus on an evolutionary perspective and theoretical frameworks of life history theory, behavioural ecology, and cultural evolution. I use diverse quantitative methods such as computational models and Bayesian statistics to analyse empirical data from cross-sectional, longitudinal, and cross-cultural sources.
 
-[Download my CV (PDF)](/assets/cv/Varas-Enriquez_CV.pdf)
+[Download my CV (PDF)](/assets/cv/cv.pdf)
