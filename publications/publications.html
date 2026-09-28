@@ -1,0 +1,46 @@
+<style>
+.main-content ol.pubs { list-style: none; padding: 0; margin: 0 0 2rem; }
+.main-content ol.pubs li { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+.pubs .abbr { flex: 0 0 90px; align-self: flex-start; text-align: center; background: #159957; color: #fff; font-size: .75rem; padding: .25rem .4rem; border-radius: .25rem; }
+.pubs .title { font-weight: 600; }
+.pubs .authors { color: #606c71; font-size: .95rem; }
+.pubs .links { margin-top: .4rem; }
+.pubs .links a { display: inline-block; margin-right: .4rem; padding: 0 .5rem; border: 1px solid #159957; border-radius: .25rem; font-size: .8rem; text-decoration: none; }
+.pubs .links a:hover { background: #159957; color: #fff; }
+.pubs .abstract { margin-top: .6rem; padding: .8rem; background: #f3f6fa; border-radius: .3rem; font-size: .9rem; }
+@media (max-width: 600px) { .main-content ol.pubs li { flex-direction: column; gap: .4rem; } }
+</style>
+
+{% assign by_year = site.data.publications | group_by: "year" | sort: "name" | reverse %}
+{% for group in by_year %}
+<h2>{{ group.name }}</h2>
+<ol class="pubs">
+{% for p in group.items %}
+<li>
+<span class="abbr">{{ p.abbr }}</span>
+<div class="entry">
+<div class="title">{{ p.title }}</div>
+<div class="authors">{{ p.authors }}</div>
+<div class="venue"><em>{{ p.venue }}</em>, {{ p.year }}</div>
+<div class="links">
+{% if p.abstract %}<a href="#" class="abs-toggle">Abs</a>{% endif %}
+{% if p.html %}<a href="{{ p.html }}">HTML</a>{% endif %}
+{% if p.pdf %}<a href="{{ p.pdf | relative_url }}">PDF</a>{% endif %}
+{% if p.preprint %}<a href="{{ p.preprint }}">Preprint</a>{% endif %}
+</div>
+{% if p.abstract %}<div class="abstract" hidden>{{ p.abstract }}</div>{% endif %}
+</div>
+</li>
+{% endfor %}
+</ol>
+{% endfor %}
+
+<script>
+document.querySelectorAll('.abs-toggle').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var box = a.closest('.entry').querySelector('.abstract');
+    box.hidden = !box.hidden;
+  });
+});
+</script>
