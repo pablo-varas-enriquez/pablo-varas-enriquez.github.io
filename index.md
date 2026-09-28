@@ -2,7 +2,7 @@
    layout: default
 ---
 
-<img src="/assets/profile.jpg" alt="Pablo Varas Enriquez" width="200" style="float: right; margin: 0 0 1rem 1rem; border-radius: 8px;">
+<img src="/assets/profile_pic.jpg" alt="Pablo Varas Enriquez" width="200" style="float: right; margin: 0 0 1rem 1rem; border-radius: 8px;">
 
 ## Pablo Varas Enríquez
 
