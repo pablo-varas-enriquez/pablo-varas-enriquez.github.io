@@ -1,0 +1,16 @@
+- abbr: Nat Hum Behav
+  year: 2025
+  title: Title of the article
+  authors: "<strong>Varas Enríquez, P. J.</strong>, Coauthor, A., and Coauthor, B."
+  venue: Nature Human Behaviour
+  abstract: "Abstract text here, on one line."
+  html: https://doi.org/10.xxxx/xxxxx
+  pdf: /assets/papers/paper.pdf
+  preprint: https://osf.io/xxxxx
+
+- abbr: PhD thesis
+  year: 2025
+  title: "Variability, resource dynamics, and the human life cycle"
+  authors: "<strong>Varas Enríquez, P. J.</strong>"
+  venue: Max Planck Institute for Evolutionary Anthropology
+  pdf: /assets/papers/thesis.pdf
