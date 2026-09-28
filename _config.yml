@@ -1,5 +1,5 @@
 title: Pablo José Varas Enriquez
 description: Research Fellow at IAST · Human behavioural ecology, demography, and culture
-show_downloads: false
+show_downloads: true
 google_analytics:
-theme: jekyll-theme-minimal
+theme: jekyll-theme-cayman
