@@ -2,11 +2,31 @@
    layout: default
 ---
 
-<div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+<style>
+.intro { position: relative; max-width: 40rem; margin: 0 auto; }
+.intro img {
+  position: absolute;
+  right: 100%;
+  margin-right: 2rem;
+  width: 400px;
+  border-radius: 8px;
+}
+.intro h2:first-of-type { margin-top: 0; }
 
-<img src="/assets/profile_pic.jpg" alt="Pablo Varas Enriquez" style="width: 400px; max-width: 100%; border-radius: 8px;">
+/* On narrower screens, stack the photo above the text */
+@media (max-width: 1300px) {
+  .intro img {
+    position: static;
+    display: block;
+    margin: 0 auto 1.5rem;
+    max-width: 100%;
+  }
+}
+</style>
 
-<div style="flex: 1; min-width: 260px;" markdown="1">
+<div class="intro" markdown="1">
+
+<img src="/assets/profile_pic.jpg" alt="Pablo Varas Enriquez">
 
 ## Pablo Varas Enríquez
 
@@ -17,7 +37,5 @@ Previously, I obtained my PhD at the Max Planck Insititue for Evolutionary Anthr
 My research aims to answer the question on why people have babies? I focus on an evolutionary perspective and theoretical frameworks of life history theory, behavioural ecology, and cultural evolution. I use diverse quantitative methods such as computational models and Bayesian statistics to analyse empirical data from cross-sectional, longitudinal, and cross-cultural sources.
 
 [Download my CV (PDF)](/assets/cv.pdf)
-
-</div>
 
 </div>
