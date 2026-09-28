@@ -1,0 +1,38 @@
+name: Convert BibTeX to YAML
+
+on:
+  push:
+    paths:
+      - "_bibliography/*.bib"
+      - "_scripts/bib2yaml.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install "bibtexparser<2" pyyaml
+
+      - name: Convert BibTeX to YAML
+        run: |
+          mkdir -p _data
+          python _scripts/bib2yaml.py _bibliography/peer_reviewed.bib > _data/peer_reviewed.yml
+          python _scripts/bib2yaml.py _bibliography/preprints.bib > _data/preprints.yml
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data
+          git diff --cached --quiet || git commit -m "Update publications data from BibTeX"
+          git push
