@@ -21,7 +21,8 @@ FALLBACK_ABBR = {
 
 
 def clean(s):
-    s = re.sub(r"\s+", " ", s or "").strip()
+    s = re.sub(r"\\(?:textbf|textit|emph|textsc|textrm)", "", s or "")   # drop LaTeX styling
+    s = re.sub(r"\s+", " ", s).strip()
     return s.replace("{", "").replace("}", "")
 
 
